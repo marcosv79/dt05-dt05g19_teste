@@ -1,0 +1,340 @@
+\documentclass[a4wide]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[pdf]{graphviz}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{language=C}
+\lstset{basicstyle=\small,
+        captionpos=b,
+        float=tp,
+        xleftmargin=1.5em,
+        xrightmargin=1.5em,
+        frameround=ttff,
+        frame=single,
+       floatplacement=tbp}
+\def\lstlistlistingname{Listagens de Código}
+\def\lstlistingname{Listagem}
+
+\usepackage{amsmath}
+
+\title{Laboratórios de Informática\\ 2022/2023}
+\author{Marcos Vasconcelos\\Diogo Oliveira\\Tomás Ferreira}
+\date{ 3 de janeiro de 2023 } 
+\begin{figure}
+\centering
+    \includegraphics[width=0.60\textwidth]{transferir.png}
+\end{figure}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    Neste documento irá ser desenvolvido o Trabalho Prático de Matemática Discreta considerando a sua conversão para o LaTeX.\\O trabalho foi desenvolvido pelos alunos Marcos Vasconcelos, Diogo Oliveira e Tomás Ferreira no âmbito da disciplina de Laboratórios de Informática.
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Introdução}
+\label{cap:introducao}
+Este trabalho representa a conversão de um relatório da disciplina de Matemática Discreta para LaTeX.\\Este relatório foi desenvolvido através do Overleaf, que é um editor online de texto em LaTeX onde é possível editar diversos modelos de documentos, como relatórios e currículos. Também permite a partilha dos projetos com outros utilizadores, sem ser necessário instalar algo.
+
+\section{Objetivos}
+Este trabalho prático tem como objetivo elaborar um relatório tendo por base a ferramenta de edição
+LaTeX.\\Considerando o documento exemplo desenvolvido ao longos das aulas dedicadas a esta
+temática, pretende-se que o documento inclua:
+\begin{itemize}
+    \item Uma correta estruturação do documento com capítulos, secções e subsecções;
+    \item Estruturação de partes do texto com itens, enumerado e descrições;
+    \item Uso das diferentes formatações disponíveis, como por exemplo:
+    \begin{itemize}
+        \item Enfâse;
+        \item Itálico;
+        \item Negrito.
+    \end{itemize}
+    \item Inclusão de vários tipos de objetos no documento (figuras, tabelas, listagens de código),
+considerando os parâmetros disponíveis para a sua formatação;
+    \item Uso de índices dos vários itens incluídos no documento: índice geral, de figuras e de tabelas.
+\end{itemize}
+
+\section{Estrutura do documento}
+Este documento está dividido em  capítulos:\\O Capítulo \ref{cap:introducao} tem uma breve introdução e objetivos do trabalho.\\No Capítulo \ref{cap:recInfo} tem uma primeira abordagem ao trabalho, onde houve uma seleção e recolha de informação para o desenvolvimento do mesmo.\\No Capítulo \ref{cap:questoes} é onde tem as questões pedidas pelo docente e as respetivas respostas.\\E finalmente no Capítulo \ref{cap:conclusao} temos a conclusão onde falamos dos principais contributos e dificuldades na realização deste trabalho.
+
+\chapter{Recolha de informação}
+\label{cap:recInfo}
+\section{Escolha de cidades}
+Para a resolução deste problema foram selecionadas 9 cidades para detalhar as rotas/destinos aéreos e posteriormente responder a uma série de questões.\\
+As cidades escolhidas foram:
+\begin{itemize}
+    \item Porto (OPO); 
+    \item Lisboa (LIS); 
+    \item Faro (FAO);
+    \item Agadir (AGA); 
+    \item Madrid (MAD); 
+    \item Dublin (DUB); 
+    \item Manchester (MAN); 
+    \item Paris (BVA); 
+    \item Roma (CIA); 
+\end{itemize}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{opo.png}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{lis.png}
+            \end{subfigure}
+        \caption{Rotas aéreas: OPO e LIS}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fao.png}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{aga.png}
+            \end{subfigure}
+            \caption{Rotas aéreas: FAO e AGA}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{mad.png}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{dub}
+            \end{subfigure}
+            \caption{Rotas aéreas: MAD e DUB}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{man.png}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bva.png}
+            \end{subfigure}
+            \caption{Rotas aéreas: MAN e BVA}
+\end{figure*}
+
+\begin{figure*}[h]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{cia.png}
+            \end{subfigure}
+            \caption{Rotas aéreas: CIA}
+\end{figure*}
+
+\chapter{Questões}
+\label{cap:questoes}
+\begin{description} 
+\item[]\textbf{1. Represente a situação escolhida por meio de um grafo.}
+\end{description}
+
+\begin{tikzpicture}
+\node[](a){};
+\node[circle,draw](b)[right=of a]{DUB};
+\node[circle,draw](c)[right=of b]{MAN};
+\node[](d)[right=of c]{};
+\node[](e)[right=of d]{};
+\node[circle,draw](f)[below=of a]{LIS};
+\node[](g)[below=of b]{};
+\node[](h)[below=of c]{};
+\node[circle,draw](i)[below=of d]{BVA};
+\node[](j)[below=of e]{};
+\node[](k)[below=of f]{};
+\node[circle,draw](l)[below=of g]{OPO};
+\node[](m)[below=of h]{};
+\node[](n)[below=of i]{};
+\node[circle,draw](o)[below=of j]{CIA};
+\node[circle,draw](p)[below=of k]{AGA};
+\node[](q)[below=of l]{};
+\node[](r)[below=of m]{};
+\node[circle,draw](s)[below=of n]{MAD};
+\node[](t)[below=of o]{};
+\node[](u)[below=of o]{};
+\node[](v)[below=of p]{};
+\node[](w)[below=of q]{};
+\node[circle,draw](x)[below=of r]{FAO};
+\node[](y)[below=of s]{};
+\draw[-](b)--(c);
+\draw[-](b)--(i);
+\draw[-](b)--(s);
+\draw[-](b)--(x);
+\draw[-](b)--(l);
+\draw[-](b)--(p);
+\draw[-](b)--(f);
+\draw[-](c)--(i);
+\draw[-](c)--(s);
+\draw[-](c)--(x);
+\draw[-](c)--(l);
+\draw[-](c)--(f);
+\draw[-](i)--(x);
+\draw[-](i)--(l);
+\draw[-](o)--(f);
+\draw[-](o)--(l);
+\draw[-](o)--(p);
+\draw[-](s)--(f);
+\draw[-](s)--(l);
+\draw[-](s)--(p);
+\draw[-](s)--(x);
+\draw[-](x)--(l);
+\draw[-](p)--(l);
+\draw[-](p)--(f);
+\draw[-](f)--(l);
+\end{tikzpicture}
+
+\begin{description} 
+\item[]\textbf{2. Indique, justificando, se o grafo é conexo.\\
+No contexto do problema, interprete a sua resposta.
+}\\
+O grafo é conexo porque há uma cadeia entre quaisquer 2 vértices.\\
+No contexto do problema, interpreta-se que é possível chegar a qualquer cidade seja qual for a cidade de partida.\\\\\\\\\\
+\end{description}
+
+\begin{description} 
+\item[]\textbf{3. Indique, justificando, se o grafo é eureliano.\\
+No contexto do problema, interprete a sua resposta.
+}\\
+O grafo não é eureliano porque nem todos os vértices têm grau par. Não é possível desenhar o grafo sem repetir linhas e sem levantar o lápis.\\
+No contexto do problema, interpreta-se que não é possível fazer todos os voos sem repetir mais do que uma vez pelo menos um voo.\\
+\end{description}
+
+\begin{description} 
+\item[]\textbf{4. Indique, justificando, se o grafo é hamiltoniano.\\
+No contexto do problema, interprete a sua resposta.
+}\\
+O grafo é hamiltoniano porque é possível passar por todos os vértices sem ter de os repetir.\\
+No contexto do problema, é possível ir a todas as cidades sem repetir cada uma delas.\\
+\end{description}
+
+\begin{description} 
+\item[]\textbf{5. Apresente a matriz de adjacência do grafo considerado na questão 1.\\
+}
+\end{description}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \ & OPO & LIS & FAO & AGA & MAD & DUB & MAN & BVA & CIA \\
+        \hline
+        OPO & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        LIS & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 \\
+        \hline
+        FAO & 1 &0 &0& 0& 1& 1& 1 &1& 0 \\
+        \hline
+        AGA & 1& 1 &0 &0 &1& 1& 0& 0& 1 \\
+        \hline
+        MAD &1& 1& 1& 0& 0 &1& 1& 0& 0 \\
+        \hline
+        DUB& 1 &1& 1 &1 &1& 0& 1& 1 &0 \\
+        \hline
+        MAN& 1& 1& 1 &0& 1& 1 &0 &1 &0 \\
+        \hline
+        BVA& 1& 0& 1& 0& 0& 1 &1& 0& 0 \\
+        \hline
+        CIA& 1 &1& 0& 1& 0& 0& 0& 0& 0 \\
+        \hline
+    \end{tabular}
+    \caption{Matriz de adjacência}
+\end{table}
+\begin{description} 
+\item[]\textbf{\\\\\\\\\\\\\\\\\\\\\\\\\\6. Indique o fecho transitivo direto de um vértice à sua escolha.\\
+No contexto do problema, apresente uma interpretação para o conjunto obtido.\\
+}
+No contexto do problema, é possível interpretar que com apenas 1 voo de partida em Lisboa (LIS) podemos chegar a qualquer outra cidade (exceto Faro (FAO) e Paris (BVA)).
+\end{description}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|}
+        \hline
+        LIS \\
+        \hline
+        1 \\
+        \hline
+        0 \\
+        \hline
+        2 \\
+        \hline
+        1 \\
+        \hline
+        1 \\
+        \hline
+        1 \\
+        \hline
+        1 \\
+        \hline
+        1 \\
+        \hline
+        2 \\
+        \hline
+        1 \\
+        \hline
+    \end{tabular}
+        \caption{Fecho transitivo direto do vértice LIS}
+\end{table}
+
+\begin{description} 
+\item[]\textbf{\\\ 7. Indique o fecho transitivo inverso de um vértice à sua escolha.\\
+No contexto do problema, apresente uma interpretação para o conjunto obtido.\\
+}
+No contexto do problema, é possível interpretar que em quase todas as cidades (exceto Porto (OPO), Lisboa (LIS) e Agadir (AGA)) é necessário fazer 2 voos para chegar ao aeroporto de Roma (CIA).
+\end{description}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        CIA & 1 & 1 & 2 & 1 & 2 & 2 & 2 & 2 & 2 & 2 \\
+        \hline
+    \end{tabular}
+            \caption{Fecho transitivo inverso do vértice CIA}
+\end{table}
+
+\chapter{Conclusão}
+Neste trabalho abordámos o assunto de fazer a edição de um documento através do editor de texto LaTeX e concluímos que foi uma excelente experiência e cumprimos com todos os objetivos que nos tínhamos proposto.\\
+Foi um trabalho muito importante para o nosso conhecimento e aprofundamento deste tema, uma vez que nos permitiu aperfeiçoar e desenvolver competências de investigação, seleção e organização. 
+\label{cap:conclusao}
+\section{Principais contributos}
+Houveram várias contributos na realização deste trabalho. Conhecemos uma nova ferramenta de edição de texto que nos era desconhecida que nos trouxe várias vantagens:
+\begin{enumerate}
+    \item Conhecimento de um novo editor de texto;
+    \item O LaTeX normalmente não tem bugs, ao contrário do editor de texto Word;
+    \item A linguagem LaTeX é indicada para escrever artigos e trabalhos académicos de todo o tipo;
+    \item As versões dos arquivos não sofrem com incompatibilidade.
+\end{enumerate}
+\section{Dificuldades}
+Também houveram algumas dificuldades, tais como:
+\begin{itemize}
+    \item Aprendizagem da linguagem no ínicio do relatório;
+    \item Paciência e dedicação para dominar a linguagem utilizada no LaTeX;
+    \item Correção de erros;
+    \item Criação de grafos.
+\end{itemize}
+
+\bibliographystyle{alpha}
+\bibliography{bibliografia}
+ JabRef - https://www.jabref.org/\\Zotero - https://www.zotero.org/
+\end{document}
